@@ -1,0 +1,6 @@
+C:\Users\prado\source\repos\PresentacionT\EntidadesT\bin\Debug\EntidadesT.dll
+C:\Users\prado\source\repos\PresentacionT\EntidadesT\bin\Debug\EntidadesT.pdb
+C:\Users\prado\source\repos\PresentacionT\EntidadesT\obj\Debug\EntidadesT.csproj.AssemblyReference.cache
+C:\Users\prado\source\repos\PresentacionT\EntidadesT\obj\Debug\EntidadesT.csproj.CoreCompileInputs.cache
+C:\Users\prado\source\repos\PresentacionT\EntidadesT\obj\Debug\EntidadesT.dll
+C:\Users\prado\source\repos\PresentacionT\EntidadesT\obj\Debug\EntidadesT.pdb

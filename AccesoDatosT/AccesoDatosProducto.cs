@@ -23,14 +23,14 @@ namespace AccesoDatosT
         {
             b.comando(string.Format("call insertProducto(" +
               "'{0}','{1}',{2},{3})", Entidad.Nombre,
-              Entidad.Descricpion, Entidad.Precio, Entidad.Idproducto));
+              Entidad.Descripcion, Entidad.Precio, Entidad.Idproducto));
         }
 
         public DataSet Mostrar(string filtro)
         {
             return b.Obtener
             (string.Format("call showProducto('%{0}%')",
-            filtro), "producto"); ;
+            filtro), "producto");
         }
     }
 }

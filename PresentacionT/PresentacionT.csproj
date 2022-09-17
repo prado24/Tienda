@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{08146394-4970-4C98-83A0-0DE71A9A50A6}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PresentacionT</RootNamespace>
     <AssemblyName>PresentacionT</AssemblyName>
@@ -30,9 +30,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,8 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProducto.Designer.cs">
+      <DependentUpon>FrmProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductoAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductoAdd.Designer.cs">
+      <DependentUpon>FrmProductoAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmProducto.resx">
+      <DependentUpon>FrmProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductoAdd.resx">
+      <DependentUpon>FrmProductoAdd.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccesoDatosT\AccesoDatosT.csproj">
+      <Project>{688ccdcd-7f00-43cc-a1da-fc97f88592f7}</Project>
+      <Name>AccesoDatosT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntidadesT\EntidadesT.csproj">
+      <Project>{36e6a981-63d4-4145-8790-9286bc3f2b4d}</Project>
+      <Name>EntidadesT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ManejadorT\ManejadorT.csproj">
+      <Project>{70011101-33d2-4673-a6b3-0282c04363d2}</Project>
+      <Name>ManejadorT</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

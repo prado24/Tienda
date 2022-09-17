@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using EntidadesT;
 using AccesoDatosT;
 using Crud;
+using System.Data;
 using System.Drawing;
 
 namespace ManejadorT
@@ -17,13 +18,13 @@ namespace ManejadorT
         Grafico g = new Grafico();
         public void Borrar(dynamic Entidad)
         {
-            DialogResult rs = MessageBox.Show(String.Format(String.Format(
-                "Estas seguro de borrar: {0}", Entidad.Nombre)
-                ), "!Atencion",
-                MessageBoxButtons.YesNo,
+            DialogResult rs = MessageBox.Show(
+                string.Format("¿Está seguro de borrar {0}",
+                Entidad.Nombre),
+                "!Atención", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
-                        if (rs == DialogResult.Yes)
-                            ap.Borrar(Entidad);
+            if (rs == DialogResult.Yes)
+                ap.Borrar(Entidad);
         }
 
         public void Guardar(dynamic Entidad)
@@ -38,9 +39,10 @@ namespace ManejadorT
             tabla.Columns.Clear();
             tabla.RowTemplate.Height = 30;
             tabla.DataSource = ap.Mostrar(filtro).Tables["producto"];
-            tabla.Columns.Insert(4,g.Boton(
+            tabla.Columns.Insert(4, g.Boton(
                 "Editar", Color.Green));
-            tabla.Columns.Insert(5,g.Boton("Borrar",Color.Red));
+            tabla.Columns.Insert(5, g.Boton(
+                "Borrar", Color.Red));
             tabla.Columns[0].Visible = false;
         }
     }
